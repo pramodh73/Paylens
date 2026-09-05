@@ -173,8 +173,8 @@ backend/data/paylens_transactions.csv
 - `processing_time_seconds`: Transaction processing latency (float)
 - `customer_id`: Unique customer identifier (e.g. `CUST15501`)
 ---
-## 🚀 Local Setup & Quickstart
-## 7. Installation & Setup
+🚀 Local Setup & Quickstart
+ 7. Installation & Setup
 ### Prerequisites
 * **Node.js**: v18+ (tested on v24.19)
 * **Python**: v3.10+ (tested on v3.12)
@@ -205,37 +205,12 @@ cp .env.example .env
 ```
 *Backend runs on: `http://127.0.0.1:8000` (API Docs at `http://127.0.0.1:8000/docs`)*
 ---
-## 10. Hackathon 3–5 Minute Demo Flow
-1. **Dashboard Overview**:
-   - Open `http://localhost:5173`.
-   - Highlight the 25,000 transactions and the 92.2% overall success rate.
-   - Point out the **Estimated Transaction Value at Risk** KPI card with its clear disclaimer.
-2. **Review Telemetry Visualizations**:
-   - Show the daily volume trend, payment-method success rates, and bank decline distributions.
-3. **Spot Active Payment Incident**:
-   - Review the **Active Incidents** list. Notice `CRITICAL` incident on Kotak Netbanking or SBI UPI where success rate dropped to ~64-70%.
-4. **Click "Investigate"**:
-   - View the deep-dive diagnostic comparison:
-     - Baseline Success Rate vs Incident Success Rate.
-     - Affected transaction count and processing latency spike.
-5. **AI Root-Cause Diagnosis**:
-   - Review **Likely Root Cause**: Shows acquiring gateway latency degradation.
-   - Highlight the side-by-side distinction: **Observed Evidence (Facts)** vs **AI Interpretation (Reasoning)**.
-   - Note the **Recommended Action for Merchant**: Dynamic routing shift to alternative payment rails and escalation template.
-   - Click **"Re-run Investigation"** to show real-time re-analysis.
-6. **Ask AI Assistant**:
-   - Click **"Ask AI Assistant"** in the top navbar.
-   - Click quick prompt: *"What is the biggest payment issue right now?"*
-   - Verify the assistant answers strictly using the calculated incident metrics without hallucinations.
-7. **Transaction Ledger**:
-   - Switch to **Transactions** tab to verify fast backend pagination and filtering.
----
-## 11. Security & Best Practices
+## 8. Security & Best Practices
 - **Zero Secret Leakage**: `backend/.env` is ignored by Git. No API keys are embedded in frontend source code, client builds, or API responses.
 - **Fail-Safe Fallback**: Complete application functionality (anomaly detection, analytics, and root-cause investigations) runs without requiring external LLM API availability.
 - **Performance Optimized**: Data is cached in memory with Pandas, eliminating disk read overhead on every query.
 ---
-## 12. Limitations & Future Roadmap
+## 9. Limitations & Future Roadmap
 - **Streaming Webhook Ingestion**: In production, integrate Kafka/RabbitMQ for sub-second webhook ingestion from Razorpay.
 - **Automated Routing Execution**: Directly execute smart routing adjustments via Razorpay Optimizer APIs when an acquiring partner degrades.
 - **Custom Merchant Anomaly Sensitivity**: Allow merchants to configure custom alerting thresholds per payment rail.
